@@ -12,9 +12,22 @@ keyAdderUniqueVal(cat, "toy", "yarn"); // => {name: "Willie", color: "orange", t
 keyAdderUniqueVal(cat, "fruit", "orange"); // => {name: "Willie", color: "orange", toy: "yarn"}
 console.log(cat); // { name: "Willie", color: "orange", toy: "yarn" }
 ***********************************************************************/
-
+//Understand
+	//function accepts an object, string to be set as a key and a value
+	//return mutated object
+//Plan
+	//
 function keyAdderUniqueVal(object, key, value) {
-	// your code here
+	let val = Object.values(object);	// this is an array
+	for(let i = 0; i < val.length; i++){
+		let currentVal = val[i];
+
+		if(currentVal === value){
+			return object;
+		}
+	}
+	object[key] = value;
+	return object;
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
