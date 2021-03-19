@@ -17,18 +17,25 @@ console.log(cat); // { name: "Willie", color: "orange", toy: "yarn" }
 	//return mutated object
 //Plan
 	//
-function keyAdderUniqueVal(object, key, value) {
-	let val = Object.values(object);	// this is an array
-	for(let i = 0; i < val.length; i++){
-		let currentVal = val[i];
+// function keyAdderUniqueVal(object, key, value) {
+// 	let val = Object.values(object);	// this is an array
+// 	for(let i = 0; i < val.length; i++){
+// 		let currentVal = val[i];
 
-		if(currentVal === value){
+// 		if(currentVal === value){
+// 			return object;
+// 		}
+// 	}
+// 	object[key] = value;
+// 	return object;
+// }
+
+	function keyAdderUniqueVal(object, key, value){
+		if(!Object.values(object).join(' ').includes(value)){
+			object[key] = value;
 			return object;
 		}
+		return object;
 	}
-	object[key] = value;
-	return object;
-}
-
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = keyAdderUniqueVal;
